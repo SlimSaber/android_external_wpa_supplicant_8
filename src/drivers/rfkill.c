@@ -77,13 +77,13 @@ static void rfkill_receive(int sock, void *eloop_ctx, void *sock_ctx)
 		return;
 
 	if (event.hard) {
-		wpa_printf(MSG_INFO, "rfkill: WLAN hard blocked");
+		wpa_printf(MSG_DEBUG, "rfkill: WLAN hard blocked");
 		new_blocked = 1;
 	} else if (event.soft) {
-		wpa_printf(MSG_INFO, "rfkill: WLAN soft blocked");
+		wpa_printf(MSG_DEBUG, "rfkill: WLAN soft blocked");
 		new_blocked = 1;
 	} else {
-		wpa_printf(MSG_INFO, "rfkill: WLAN unblocked");
+		wpa_printf(MSG_DEBUG, "rfkill: WLAN unblocked");
 		new_blocked = 0;
 	}
 
